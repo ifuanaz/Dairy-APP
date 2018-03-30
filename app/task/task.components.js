@@ -29,7 +29,7 @@
             });
 
             vm.addTaskComment = function (event, comment = {text: ''}) {
-                if(event.ctrlKey || event.keyCode === 17 && event.keyCode === 13 && comment.text !== '') {
+                if(event.ctrlKey && event.keyCode == 13 && comment.text !== '') {
                     TaskService.addTaskComment(taskId, comment)
                     comment.text = '';
                 }
