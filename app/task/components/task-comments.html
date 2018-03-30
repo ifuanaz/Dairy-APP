@@ -1,0 +1,22 @@
+<div class="comments-content">
+    <h2 class="comments-title">Comments #{{ $ctrl.task.id }}</h2>
+
+    <div class="comments-block" ng-if="!$ctrl.task.comments.length">
+        <p>There aren't any comments yet!</p>
+    </div>
+    <div class="comments-block" ng-if="$ctrl.task.comments">
+        <div class="comments-item" ng-repeat="item in $ctrl.task.comments track by item.id">
+            <div class="comments-avatar"></div>
+            <div class="comments-text">
+                <p>{{ item.text }}</p>
+            </div>
+        </div>
+    </div>
+
+    <form class="comments-form" ng-keypress="$ctrl.addTaskComment($event, newComment)">
+        <div class="comments-avatar"></div>
+        <div class="comments-textarea">
+            <textarea ng-model="newComment.text"></textarea>
+        </div>
+    </form>
+</div>

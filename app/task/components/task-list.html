@@ -1,0 +1,25 @@
+<div class="task-content">
+    <h2 class="task-title">Items</h2>
+
+    <form class="task-form" ng-submit="$ctrl.addTask(newTask)">
+        <input
+            type="text"
+            ng-model="newTask.name"
+            placeholder="Type name here..."
+            maxlength="33"
+            required
+        >
+        <button type="submit">Add new</button>
+    </form>
+
+    <ul class="task-list">
+        <li class="task-item" ui-sref-active="active" ng-repeat="task in $ctrl.tasks track by task.id">
+            <a ui-sref="app.comments({taskId: task.id})" class="task-name">
+                {{ task.name }}
+                <span class="task-comments-count">{{ task.comments.length }}</span>
+            </a>
+            <button type="button" class="task-delete" ng-click="$ctrl.deleteTask(task.id)">Delete</button>
+        </li>
+    </ul>
+
+</div>

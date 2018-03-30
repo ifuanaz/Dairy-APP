@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dairy APP</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic,greek" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body ng-cloak>
+
+    <div class="wrapper">
+        <aside class="aside">
+            <h1 class="aside-title">
+                <a ui-sref="app.task">Dairy app</a>
+            </h1>
+            <p class="aside-text">Comment with no sense</p>
+        </aside>
+
+        <div class="content">
+            <ui-view></ui-view>
+        </div>
+    </div>
+
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js" charset="utf-8"></script>
+    <script src="node_modules/lodash/lodash.js" charset="utf-8"></script>
+
+    <!-- APP -->
+    <script src="app/app.js" charset="utf-8"></script>
+
+    <!-- Task -->
+    <script src="app/task/task.states.js" charset="utf-8"></script>
+    <script src="app/task/task.services.js" charset="utf-8"></script>
+    <script src="app/task/task.components.js" charset="utf-8"></script>
+
+</body>
+</html>
